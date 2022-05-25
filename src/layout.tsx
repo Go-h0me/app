@@ -1,0 +1,25 @@
+import { lazy, Suspense } from 'react'
+import { Outlet } from 'react-router-dom'
+
+const Navbar = lazy(() => import('./components/navbar'));
+const Sidebar = lazy(() => import('./components/sidebar'));
+
+export default function Layout() {
+    return (
+        <>
+            <Suspense fallback>
+                <Navbar />                
+            </Suspense>
+
+            <div className="flex flex-col md:pl-64">
+                <main className="flex-1">
+                    <div className="py-6">
+                        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+                            <Outlet />
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </>
+    )
+}
