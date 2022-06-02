@@ -118,7 +118,7 @@ module.exports = (env, argv) => {
             }),
 
             new webpack.optimize.LimitChunkCountPlugin({
-                maxChunks: 5,
+                maxChunks: 2,
             }),
             new webpack.ProvidePlugin({
                 "React": "react",
@@ -211,27 +211,27 @@ module.exports = (env, argv) => {
             // },
 
 
-            splitChunks: {
-                cacheGroups: {
-                    // defaultVendors: {
-                    //     test: /[\\/]node_modules[\\/](react|react-dom|web3)[\\/]/,
-                    //     name: 'vendor',
-                    //     chunks: 'all',
-                    // },
+            // splitChunks: {
+            //     cacheGroups: {
+            //         // defaultVendors: {
+            //         //     test: /[\\/]node_modules[\\/](react|react-dom|web3)[\\/]/,
+            //         //     name: 'vendor',
+            //         //     chunks: 'all',
+            //         // },
 
-                    polyfill: {
-                        test: /[\\/]node_modules[\\/](assert|browserify-zlib|buffer|console-browserify|constants-browserify|crypto-browserify|domain-browser|events|filter-obj|https-browserify)[\\/]/,
-                        name: 'polyfill',
-                        chunks: 'all',
-                    },
+            //         polyfill: {
+            //             test: /[\\/]node_modules[\\/](assert|browserify-zlib|buffer|console-browserify|constants-browserify|crypto-browserify|domain-browser|events|filter-obj|https-browserify)[\\/]/,
+            //             name: 'polyfill',
+            //             chunks: 'all',
+            //         },
 
-                    // vendor: {
-                    //     test: /[\\/]node_modules[\\/](react|react-dom|web3)[\\/]/,
-                    //     name: 'vendor',
-                    //     chunks: 'all',
-                    // },
-                },
-            },
+            //         // vendor: {
+            //         //     test: /[\\/]node_modules[\\/](react|react-dom|web3)[\\/]/,
+            //         //     name: 'vendor',
+            //         //     chunks: 'all',
+            //         // },
+            //     },
+            // },
 
             minimizer: [
                 new TerserPlugin(),
