@@ -3,31 +3,26 @@ import './index.css';
 
 import { createRoot } from 'react-dom/client';
 
+import { WagmiConfig } from 'wagmi';
+
+import client from './helper/connect';
+
 // import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
 
 import App from './app';
 
-import { Web3ReactProvider } from '@web3-react/core';
+import Modals from './components/modals';
 
-import { Web3Provider } from '@ethersproject/providers';
+// const container = document.getElementById('root');
 
-function getLibrary(provider?: any) {
-    const library = new Web3Provider(provider);
-    library.pollingInterval = 8000;
-    return library;
-}
-
-const container = document.getElementById('root');
-
-const root = createRoot(container!);
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const root = createRoot(document.getElementById('root')!);
 
 root.render(
-    <Web3ReactProvider getLibrary={getLibrary}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </Web3ReactProvider>
+    <WagmiConfig client={client}>
+        <App />
+        <Modals></Modals>
+    </WagmiConfig>
 );
 
 // If you want to start measuring performance in your app, pass a function
