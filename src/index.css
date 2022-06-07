@@ -6,3 +6,15 @@
 body {  
     @apply min-h-screen bg-gray-100 text-gray-700 mt-20
   } */
+
+
+  @layer components {
+    .btn {
+      @apply flex justify-center py-3 px-4 border border-transparent rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring transition;
+    }
+  
+    .input {
+      @apply py-2 px-3 block w-full focus:outline-none border border-gray-300 focus:ring-indigo-500 rounded-md transition;
+    }
+  
+  }
