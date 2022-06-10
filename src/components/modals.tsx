@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import useBus from 'use-bus';
 
 import Account from './account';
+import SelectToken from './select-token';
 
 const Components = {
     account: Account,
+    selectToken: SelectToken,
 };
 
 export default function Modals() {
