@@ -5,6 +5,7 @@ import { lazy } from 'react';
 const Layout = lazy(() => import('./layout'));
 const Dashboard = lazy(() => import('./components/dashboard'));
 const Swap = lazy(() => import('./components/swap'));
+const Staking = lazy(() => import('./components/staking'));
 const _404 = lazy(() => import('./components/_404'));
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
                     <Route index element={<Dashboard />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/swap" element={<Swap />} />
+                    <Route path="/staking" element={<Staking />} />
 
                     <Route path="*" element={<_404 />} />
                 </Route>
